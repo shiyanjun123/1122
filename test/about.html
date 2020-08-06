@@ -8,9 +8,17 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" href="./css/swiper.min.css" />
     <script src="./js/swiper.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/library/AreaRestriction/1.2/src/AreaRestriction_min.js"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=shVwMD1jy7lrScgFN45cfu6NZoXyGi0T"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>联系我们</title>
 </head>
+<style type="text/css">
+    body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+    #allmap{width:100%;height:100%;}
+    p{margin-left:5px; font-size:14px;}
+</style>
 <body>
 <!--头部开始-->
 <div class="header" >
@@ -24,7 +32,7 @@
     <div class="navigation">
         <ul>
             <a href="index.html"><li>网站首页<span></span></li></a>
-            <a href=""><li >案例展示<span></span></li></a>
+            <a href="case.html"><li >案例展示<span></span></li></a>
             <a href="journalism.html"><li>新闻资讯<span></span></li></a>
             <a href="cooperation.html"><li>合作伙伴<span></span></li></a>
             <a href="about.html"><li  class="nav1">联系我们<span></span></li></a>
@@ -32,7 +40,7 @@
     </div>
     <div class="contact">
         <img src="./img/telephone.png" alt="">
-        <span>18388888888</span>
+        <span>15001391333</span>
     </div>
 </div>
 <!--头部结束-->
@@ -46,24 +54,25 @@
         <ul>
             <li>
                 <img src="./img/about_1.png" alt="">
-                <span>电 话：<i>12345678998</i></span>
+                <span>电 话：<i>15001391333</i></span>
             </li>
             <li>
                 <img src="./img/about_2.png" alt="">
-                <span>邮 箱：<i>12345678998@qq.com</i></span>
+                <span>邮 箱：<i>2475530841@qq.com</i></span>
             </li>
             <li>
                 <img src="./img/about_3.png" alt="">
-                <span>地 址： <i>黑龙江省哈尔滨市南岗区</i></span>
+                <span>地 址： <i>哈尔滨市南岗区金爵万象一期三号楼</i></span>
             </li>
         </ul>
         <div class="public">
-            <img src="./img/public.png" alt="">
+            <img src="./img/official.png" alt="">
             <p>公众号</p>
         </div>
     </div>
     <div class="about_r">
-        <img src="./img/about_pag.png" alt="">
+<!--        <img src="./img/about_pag.png" alt="">-->
+        <div id="allmap"></div>
     </div>
 </div>
 <div class="right_navigation">
@@ -72,7 +81,7 @@
         <p>咨询电话</p>
         <div class="tel">
             <p>张经理</p>
-            <span>18346666666</span>
+            <span>15001391333</span>
         </div>
     </div>
     <div class="service">
@@ -80,14 +89,14 @@
         <p>在线客服</p>
         <div class="line">
             <p>微信</p>
-            <span>18346666666</span>
+            <span>15001391333</span>
         </div>
     </div>
     <div class="service">
         <img src="./img/code.png" alt="">
         <p>微信公众号</p>
         <div class="code">
-            <img src="./img/1596602499(1).png" alt="">
+            <img src="./img/official.png" alt="">
         </div>
     </div>
     <div class="topping">
@@ -98,7 +107,7 @@
 <!--主体结束-->
 <!--底部开始-->
 <div class="side" style="clear: both">
-    <p>唐创网络科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COPYRIGHT 2003-2020 WWW.DESIGN WEBSITE.COM ALL RIGHTS RESERVED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;京ICP备0000000号</p>
+    <p>唐创网络科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COPYRIGHT 2003-2020 WWW.DESIGN WEBSITE.COM ALL RIGHTS RESERVED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黑ICP备19006625号-1</p>
 </div>
 <script>
     $(".navigation ul li").hover(function(){
@@ -116,25 +125,31 @@
         $(this).css('margin-top', '0');
     });
     $(".service").hover(function(){
-        $(this).find('.tel').css('display', 'block');
+        $(this).find('div').stop().animate({right:'70px'});
     },function(){
-        $(this).find('.tel').css('display', 'none');
-    });
-    $(".service").hover(function(){
-        $(this).find('.line').css('display', 'block');
-    },function(){
-        $(this).find('.line').css('display', 'none');
-    });
-    $(".service").hover(function(){
-        $(this).find('.code').css('display', 'block');
-    },function(){
-        $(this).find('.code').css('display', 'none');
+        $(this).find('div').animate({right:'-111px'});
     });
     $(function(){
         $('.topping').click(function(){
             $('html , body').animate({scrollTop: 0},'slow');
         });
     });
+
+    var map = new BMap.Map('allmap');
+    map.centerAndZoom(new BMap.Point(126.593955,45.702306), 100);
+    map.enableScrollWheelZoom(true);
+    // 覆盖区域图层测试
+    map.addTileLayer(new BMap.PanoramaCoverageLayer());
+
+    var stCtrl = new BMap.PanoramaControl(); //构造全景控件
+    stCtrl.setOffset(new BMap.Size(20, 20));
+    map.addControl(stCtrl);//添加全景控件
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(126.593955,45.702306);
+    map.centerAndZoom(point, 125);
+    var marker = new BMap.Marker(point);  // 创建标注
+    map.addOverlay(marker);               // 将标注添加到地图中
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
 </script>
 </body>
 </html>

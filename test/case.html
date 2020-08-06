@@ -8,8 +8,9 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" href="./css/swiper.min.css" />
     <script src="./js/swiper.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>案例展示</title>
 </head>
 <body>
 <!--头部开始-->
@@ -24,7 +25,7 @@
     <div class="navigation">
         <ul>
             <a href="index.html"><li>网站首页<span></span></li></a>
-            <a href=""><li  class="nav1">案例展示<span></span></li></a>
+            <a href="case.html"><li  class="nav1">案例展示<span></span></li></a>
             <a href="journalism.html"><li>新闻资讯<span></span></li></a>
             <a href="cooperation.html"><li>合作伙伴<span></span></li></a>
             <a href="about.html"><li>联系我们<span></span></li></a>
@@ -32,7 +33,7 @@
     </div>
     <div class="contact">
         <img src="./img/telephone.png" alt="">
-        <span>18388888888</span>
+        <span>15001391333</span>
     </div>
 </div>
 <!--头部结束-->
@@ -77,18 +78,10 @@
     </div>
 <div class="spread">
     <h1>案例展示</h1>
-    <ul>
-        <li>
-            <p>APP“易分享联盟”</p>
-        </li>
-        <li>
-            <p>APP“易分享联盟”</p>
-        </li>
-        <li>
+    <a href="presentation.html">
         <p>APP“易分享联盟”</p>
-        </li>
-
-    </ul>
+        <span>采用 流媒体技术，让用户在移动设备上享受到沉浸式、高聚焦的视听享受，使广告主的优质创意与APP实现无缝植入。</span>
+    </a>
 </div>
 <div class="right_navigation">
     <div class="service">
@@ -96,7 +89,7 @@
         <p>咨询电话</p>
         <div class="tel">
             <p>张经理</p>
-            <span>18346666666</span>
+            <span>15001391333</span>
         </div>
     </div>
     <div class="service">
@@ -104,14 +97,14 @@
         <p>在线客服</p>
         <div class="line">
             <p>微信</p>
-            <span>18346666666</span>
+            <span>15001391333</span>
         </div>
     </div>
     <div class="service">
         <img src="./img/code.png" alt="">
         <p>微信公众号</p>
         <div class="code">
-            <img src="./img/1596602499(1).png" alt="">
+            <img src="./img/official.png" alt="">
         </div>
     </div>
     <div class="topping">
@@ -122,7 +115,7 @@
 <!--主体结束-->
 <!--底部开始-->
 <div class="side" style="clear: both">
-    <p>唐创网络科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COPYRIGHT 2003-2020 WWW.DESIGN WEBSITE.COM ALL RIGHTS RESERVED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;京ICP备0000000号</p>
+    <p>唐创网络科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COPYRIGHT 2003-2020 WWW.DESIGN WEBSITE.COM ALL RIGHTS RESERVED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黑ICP备19006625号-1</p>
 </div>
 <script>
     $(".navigation ul li").hover(function(){
@@ -140,24 +133,30 @@
         $(this).css('margin-top', '0');
     });
     $(".service").hover(function(){
-        $(this).find('.tel').css('display', 'block');
+        $(this).find('div').stop().animate({right:'70px'});
     },function(){
-        $(this).find('.tel').css('display', 'none');
-    });
-    $(".service").hover(function(){
-        $(this).find('.line').css('display', 'block');
-    },function(){
-        $(this).find('.line').css('display', 'none');
-    });
-    $(".service").hover(function(){
-        $(this).find('.code').css('display', 'block');
-    },function(){
-        $(this).find('.code').css('display', 'none');
+        $(this).find('div').animate({right:'-111px'});
     });
     $(function(){
         $('.topping').click(function(){
             $('html , body').animate({scrollTop: 0},'slow');
         });
+    });
+
+    $(".spread a").hover(function(){
+        // $(this).find('p').stop().animate({'width':0},100,function(){
+        //     $(this).hide().next().show();
+        //     $(this).next().animate({'width':'100%'},1000);
+        // });
+        $(this).find('p').stop().fadeToggle();
+        $(this).find('span').stop().fadeToggle();
+    },function(){
+        // $(this).find('span').animate({'transform':'rotate(0deg)'},100,function(){
+        //     $(this).hide().prev().show();
+        //     $(this).prev().animate({'width':'340px'},100);
+        // });
+        $(this).find('p').stop().fadeToggle();
+        $(this).find('span').stop().fadeToggle();
     });
 </script>
 </body>

@@ -8,8 +8,9 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" href="./css/swiper.min.css" />
     <script src="./js/swiper.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>首页</title>
 </head>
 <body>
 <!--头部开始-->
@@ -23,7 +24,7 @@
         </div>
         <div class="navigation">
             <ul>
-                <a href=""><li class="nav1">网站首页<span></span></li></a>
+                <a href="index.html"><li class="nav1">网站首页<span></span></li></a>
                 <a href="case.html"><li>案例展示<span></span></li></a>
                 <a href="journalism.html"><li>新闻资讯<span></span></li></a>
                 <a href="cooperation.html"><li>合作伙伴<span></span></li></a>
@@ -32,7 +33,7 @@
         </div>
         <div class="contact">
             <img src="./img/telephone.png" alt="">
-            <span>18388888888</span>
+            <span>15001391333</span>
         </div>
     </div>
 <!--头部结束-->
@@ -46,7 +47,7 @@
             </div>
             <h1 style="clear: both">THE ROAD AHEAD LEADS THE FUTURE</h1>
             <h2>用APP走进互联网+时代/一站式全平台管家式服务</h2>
-            <button>立即咨询</button>
+<!--            <button>立即咨询</button>-->
         </div>
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -124,31 +125,31 @@
                         </li>
                         <li>
                             <img src="./img/case2.png" alt="">
-                            <p>合同签订</p>
+                            <p>资讯</p>
                         </li>
                         <li>
                             <img src="./img/case3.png" alt="">
-                            <p>合同签订</p>
+                            <p>原型设计</p>
                         </li>
                         <li>
                             <img src="./img/case4.png" alt="">
-                            <p>合同签订</p>
+                            <p>客户体验</p>
                         </li>
                         <li>
                             <img src="./img/case5.png" alt="">
-                            <p>合同签订</p>
+                            <p>视觉设计</p>
                         </li>
                         <li>
                             <img src="./img/case6.png" alt="">
-                            <p>合同签订</p>
+                            <p>产品研发</p>
                         </li>
                         <li>
                             <img src="./img/case7.png" alt="">
-                            <p>合同签订</p>
+                            <p>软件测试</p>
                         </li>
                         <li>
                             <img src="./img/case8.png" alt="">
-                            <p>合同签订</p>
+                            <p>上线运营</p>
                         </li>
                     </ul>
                 </div>
@@ -166,8 +167,8 @@
                     <p>
                         <img src="./img/map.png" alt="">
                         <span>
-                            <i>咨询电话： xxxxxxxxxx</i>
-                            <i>邮箱： xxxxxxxxxx</i>
+                            <i>咨询电话： 15001391333</i>
+                            <i>邮箱： 2475530841@qq.com</i>
                         </span>
                     </p>
                 </div>
@@ -194,22 +195,22 @@
             <p>咨询电话</p>
             <div class="tel">
                 <p>张经理</p>
-                <span>18346666666</span>
+                <span>15001391333</span>
             </div>
         </div>
         <div class="service">
             <img src="./img/line.png" alt="">
-            <p>在线客服</p>
+            <p>微信客服</p>
             <div class="line">
                 <p>微信</p>
-                <span>18346666666</span>
+                <span>15001391333</span>
             </div>
         </div>
         <div class="service">
             <img src="./img/code.png" alt="">
             <p>微信公众号</p>
             <div class="code">
-                <img src="./img/1596602499(1).png" alt="">
+                <img src="./img/official.png" alt="">
             </div>
         </div>
         <div class="topping">
@@ -221,7 +222,7 @@
 
 <!--底部开始-->
 <div class="side" style="clear: both">
-    <p>唐创网络科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COPYRIGHT 2003-2020 WWW.DESIGN WEBSITE.COM ALL RIGHTS RESERVED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;京ICP备0000000号</p>
+    <p>唐创网络科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COPYRIGHT 2003-2020 WWW.DESIGN WEBSITE.COM ALL RIGHTS RESERVED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黑ICP备19006625号-1</p>
 </div>
 <!--底部结束-->
     <script>
@@ -247,20 +248,11 @@
         },function(){
             $(this).removeClass("nav");
         });
+
         $(".service").hover(function(){
-            $(this).find('.tel').css('display', 'block');
+            $(this).find('div').stop().animate({right:'70px'});
         },function(){
-            $(this).find('.tel').css('display', 'none');
-        });
-        $(".service").hover(function(){
-            $(this).find('.line').css('display', 'block');
-        },function(){
-            $(this).find('.line').css('display', 'none');
-        });
-        $(".service").hover(function(){
-            $(this).find('.code').css('display', 'block');
-        },function(){
-            $(this).find('.code').css('display', 'none');
+            $(this).find('div').animate({right:'-111px'});
         });
         $(function(){
               $('.topping').click(function(){

@@ -156,7 +156,7 @@ body,html{
     /*padding-top: 213px;*/
     margin-left: 50%;
     left: -45%;
-    top: 100px;
+    top: 250px;
 }
 .efficiency{
     width: 100%;
@@ -431,7 +431,7 @@ body,html{
     padding-top: 181px;
 }
 .side p{
-    width:100%;
+    /*width:100%;*/
     height:128px;
     background:rgba(28,28,28,1);
     font-size:14px;
@@ -492,9 +492,10 @@ body,html{
     width: 111px;
     height: 111px;
     background: #FBC968;
-    right: 70px;
+    right: -111px;
     top: 0;
-    display: none;
+    border-radius: 10px 0  0 10px;
+    z-index: -1;
 }
 .tel p{
     text-align: center;
@@ -513,9 +514,10 @@ body,html{
     width: 111px;
     height: 111px;
     background: #FBC968;
-    right: 70px;
+    right: -111px;
     top: 112px;
-    display: none;
+    border-radius: 10px 0  0 10px;
+    z-index: -1;
 }
 .line p{
     text-align: center;
@@ -533,9 +535,10 @@ body,html{
     width: 111px;
     height: 111px;
     background: #FBC968;
-    right: 70px;
+    right: -111px;
     top: 224px;
-    display: none;
+    border-radius: 10px 0  0 10px;
+    z-index: -1;
 }
 .code img{
     width: 100%;
@@ -642,10 +645,11 @@ body,html{
     height: 22px;
     line-height: 22px;
 }
-.spread ul{
+.spread a{
     padding-top: 35px;
+    text-decoration: none;
 }
-.spread ul li{
+.spread a{
     width:473px;
     height:274px;
     border-radius:18px;
@@ -653,8 +657,9 @@ body,html{
     margin:40px;
     background-image: url("../img/tangchuang.png");
     background-size: 100% 100%;
+    position: relative;
 }
-.spread ul li p{
+.spread a p{
     width:340px;
     height:74px;
     border:1px solid rgba(210,210,210,1);
@@ -666,6 +671,28 @@ body,html{
     color:rgba(255,255,255,1);
     text-align: center;
     line-height: 74px;
+}
+.spread a span{
+    /*display: block;*/
+    width: 100%;
+    height: 100%;
+    border-radius:18px;
+    /*padding: 100px 30px;*/
+    box-sizing: border-box;
+    /*background: rgba(1,1,1,.5);*/
+    padding: 0 30px;
+    text-align: center;
+    padding-top: 100px;
+    color: #fff;
+    display: none;
+    /*margin-top: -20px;*/
+    /*background: #f0f;*/
+    position: absolute;
+    top: 0;
+    line-height: 40px;
+}
+.rotate{
+    transform:rotate(360deg)
 }
 .bition{
     width:100%;
@@ -746,6 +773,10 @@ body,html{
     width: 33.33%;
     float: left;
 }
+.peration_v ul li h1{
+    overflow: hidden;
+    height: 220px;
+}
 .peration_v ul li div{
     width:291px;
     height:300px;
@@ -753,6 +784,7 @@ body,html{
     border-radius: 0 0 26px 26px;
     margin: 0 auto;
     margin-bottom: 58px;
+
 }
 .peration_v ul li div img{
     width: 100%;
@@ -841,4 +873,85 @@ body,html{
     color:rgba(51,51,51,1);
     text-align: center;
     padding-top: 10px;
+}
+.mission{
+    width:100%;
+    height:261px;
+    background-image: url("../img/mission_back.png");
+    background-size: 100% 100%;
+    padding-top: 72px;
+    position: relative;
+}
+.mission h1{
+    width:329px;
+    height:74px;
+    border:1px solid rgba(220,220,220,1);
+    margin: 0 auto;
+    font-size:28px;
+    font-family:Source Han Sans CN;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+    text-align: center;
+    line-height: 74px;
+}
+.mission ul{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+.mission ul li{
+    width: 33%;
+    float: left;
+    font-size:18px;
+    font-family:Source Han Sans CN;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    text-align: center;
+}
+.mission ul li span{
+    display: block;
+    padding: 10px 0;
+
+}
+.education{
+    width:1200px;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 0px 16px 0px rgba(40,40,40,0.2);
+    margin: 0 auto;
+    margin-top: 58px;
+    padding: 0 114px 94px 114px;
+    box-sizing: border-box;
+}
+.education h1{
+    font-size:20px;
+    font-family:Source Han Sans CN;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    text-align: center;
+    width: 100%;
+    height: 87px;
+    line-height: 87px;
+    border-bottom: 1px solid#D2D2D2;
+}
+.education p{
+    font-size:20px;
+    font-family:Source Han Sans CN;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    text-align: center;
+    padding-top: 33px;
+}
+.scan img{
+    width: 116px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 58px;
+}
+.scan p{
+    font-size:18px;
+    font-family:Source Han Sans CN;
+    font-weight:500;
+    color:rgba(10,19,31,1);
+    text-align: center;
+    padding-top: 29px;
 }
